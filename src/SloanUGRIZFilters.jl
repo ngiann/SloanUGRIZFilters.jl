@@ -1,6 +1,6 @@
 module SloanUGRIZFilters
 
-    using DelimitedFiles, Interpolations, QuadGK
+    using DelimitedFiles, Interpolations, LinearAlgebra, QuadGK
 
 
     function instantiate_filter(filename)
@@ -15,6 +15,8 @@ module SloanUGRIZFilters
 
     end
 
+   
+    # Define filters
 
     filter_u = instantiate_filter("SLOAN_SDSS.u.dat")
     
@@ -26,6 +28,22 @@ module SloanUGRIZFilters
 
     filter_z = instantiate_filter("SLOAN_SDSS.z.dat")
 
+
+    # Define fold with filters
+
+    fold_u(λ, y) = dot(filter_u(λ), y)
+    
+    fold_g(λ, y) = dot(filter_g(λ), y)
+
+    fold_r(λ, y) = dot(filter_r(λ), y)
+    
+    fold_i(λ, y) = dot(filter_i(λ), y)
+    
+    fold_z(λ, y) = dot(filter_z(λ), y)
+
+
     export filter_u, filter_g, filter_r, filter_i, filter_z
+
+    export fold_u, fold_g, fold_r, fold_i, fold_z
 
 end
