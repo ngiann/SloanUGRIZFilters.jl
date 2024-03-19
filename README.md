@@ -28,3 +28,11 @@ plot(λ, filter_i.(λ),"y");fill_between(λ, 0*λ, filter_i.(λ),color="y",alpha
 plot(λ, filter_z.(λ),"r");fill_between(λ, 0*λ, filter_z.(λ),color="r",alpha=0.3)
 
 ```
+
+Check normalisation
+```
+using QuadGK # needs to be indepedently installed
+
+# answers should be very very close to 1
+map(f -> quadgk(f, 0,12_000)[1], [filter_u, filter_g, filter_r, filter_i, filter_z])
+```
