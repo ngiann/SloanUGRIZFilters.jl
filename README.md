@@ -34,5 +34,5 @@ Check normalisation
 using QuadGK # needs to be indepedently installed
 
 # answers should be very very close to 1
-map(f -> quadgk(f, 0,12_000)[1], [filter_u, filter_g, filter_r, filter_i, filter_z])
+map(f -> quadgk(f, 0, 12_000)[1], [filter_u, filter_g, filter_r, filter_i, filter_z])
 ```
