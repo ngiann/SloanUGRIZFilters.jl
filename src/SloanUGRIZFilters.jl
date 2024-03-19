@@ -46,4 +46,8 @@ module SloanUGRIZFilters
 
     # export fold_u, fold_g, fold_r, fold_i, fold_z
 
+    include("createFilterMatrix.jl")
+
+    export createFilterMatrix
+    
 end
