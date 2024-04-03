@@ -29,6 +29,12 @@ plot(λ, filter_z.(λ),"r");fill_between(λ, 0*λ, filter_z.(λ),color="r",alpha
 
 ```
 
+Convenience function:
+```
+plot(createFilterMatrix(collect(λ)))
+```
+
+
 Check normalisation
 ```
 using QuadGK # needs to be indepedently installed
