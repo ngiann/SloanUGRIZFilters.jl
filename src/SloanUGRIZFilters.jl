@@ -9,7 +9,7 @@ module SloanUGRIZFilters
 
         extrap = linear_interpolation(data[:,1], data[:,2], extrapolation_bc = 0)
 
-        Z = quadgk(λ -> extrap(λ), 0, 11230.00)[1]
+        Z = quadgk(λ -> λ * extrap(λ), 0, 11230.00)[1]
 
         x -> extrap(x) / Z # normalised filter❗
 
