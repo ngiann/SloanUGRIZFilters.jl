@@ -1,7 +1,7 @@
 name = "SloanUGRIZFilters"
 uuid = "9ca1ba71-c229-46e3-8ae9-21d24b118006"
 authors = ["Nikos Gianniotis"]
-version = "0.0.8"
+version = "0.0.9"
 
 [deps]
 DelimitedFiles = "8bb1440f-4735-579b-a4ab-409b98df4dab"
