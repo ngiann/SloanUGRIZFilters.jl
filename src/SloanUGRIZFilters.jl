@@ -3,7 +3,7 @@ module SloanUGRIZFilters
     using DelimitedFiles, Interpolations, LinearAlgebra, QuadGK
 
 
-    function instantiate_filter(filename, normalise = true)
+    function instantiate_filter(filename, normalise = false)
 
         local data = readdlm(joinpath(joinpath(dirname(pathof(SloanUGRIZFilters)), "filters"), filename))
 
